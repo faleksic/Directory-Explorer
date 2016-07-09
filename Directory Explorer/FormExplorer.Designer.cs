@@ -74,6 +74,7 @@
             // 
             this.lbLista.ForeColor = System.Drawing.Color.Olive;
             this.lbLista.FormattingEnabled = true;
+            this.lbLista.HorizontalScrollbar = true;
             this.lbLista.Location = new System.Drawing.Point(114, 112);
             this.lbLista.Name = "lbLista";
             this.lbLista.Size = new System.Drawing.Size(217, 238);

@@ -36,14 +36,26 @@ namespace Directory_Explorer
             {
                 string[] list = Directory.GetFiles(tbPath.Text);
                 indent += "   ";
-                foreach (string value in list)
+                if (list.Length == 0)
                 {
-                    lbLista.Items.Add(indent + value.Replace(tbPath.Text, ""));
+                    lbLista.Items.Add(indent + "Directory doesn't contain files!");
+                    lbLista.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lbLista.ForeColor = Color.Olive;
+                    foreach (string value in list)
+                    {
+                        string val = value.Replace(tbPath.Text, "");
+                        val = val.Replace("\\", "");
+                        lbLista.Items.Add(indent + val);
+                    }
                 }
             }
             catch
             {
-                lbLista.Items.Add("Doesn't exist or empty!");
+                indent += "   ";
+                lbLista.Items.Add(indent + "Doesn't exist!");
                 lbLista.ForeColor = Color.Red;
             }
         }
