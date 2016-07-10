@@ -16,16 +16,23 @@ namespace Directory_Explorer
         public FormExplorer()
         {
             InitializeComponent();
+            addFavorite();
         }
 
         private void btSubmit_Click(object sender, EventArgs e)
         {
+            listPath();
+        }
+
+        private void listPath()
+        {
             lbLista.Items.Clear();
+            btFavorite.Enabled = true;
             string[] input = tbPath.Text.Split('\\');
             string indent = "";
             foreach (string value in input)
             {
-                if(value == "")
+                if (value == "")
                 {
                     continue;
                 }
@@ -40,6 +47,7 @@ namespace Directory_Explorer
                 {
                     lbLista.Items.Add(indent + "Directory doesn't contain files!");
                     lbLista.ForeColor = Color.Red;
+                    btFavorite.Enabled = false;
                 }
                 else
                 {
@@ -57,9 +65,9 @@ namespace Directory_Explorer
                 indent += "   ";
                 lbLista.Items.Add(indent + "Doesn't exist!");
                 lbLista.ForeColor = Color.Red;
+                btFavorite.Enabled = false;
             }
         }
-
         private void btFavorite_Click(object sender, EventArgs e)
         {
             string path = @"C:\Users\Public\WriteLines.txt";
@@ -71,6 +79,30 @@ namespace Directory_Explorer
             }
             sw.Close();
 
+        }
+
+        private void addFavorite()
+        {
+            string line = "";
+            StreamReader file = new StreamReader(@"C:\Users\Public\WriteLines.txt");
+            line = file.ReadLine();
+            if(line != null)
+            {
+                tbPath.Text = line;
+                listPath();
+                int[] selectThis;
+                while((line = file.ReadLine()) != null)
+                {
+                    for(int i=0; i<lbLista.Items.Count; i++)
+                    {
+                        if(line == lbLista.Items[i].ToString())
+                        {
+                            lbLista.SelectedIndex = i;
+                        }
+                    }
+                }
+            }
+            file.Close();
         }
     }
 }
