@@ -84,25 +84,32 @@ namespace Directory_Explorer
         private void addFavorite()
         {
             string line = "";
-            StreamReader file = new StreamReader(@"C:\Users\Public\WriteLines.txt");
-            line = file.ReadLine();
-            if(line != null)
+            try
             {
-                tbPath.Text = line;
-                listPath();
-                int[] selectThis;
-                while((line = file.ReadLine()) != null)
+                StreamReader file = new StreamReader(@"C:\Users\Public\WriteLines.txt");
+                line = file.ReadLine();
+                if (line != null)
                 {
-                    for(int i=0; i<lbLista.Items.Count; i++)
+                    tbPath.Text = line;
+                    listPath();
+                    int[] selectThis;
+                    while ((line = file.ReadLine()) != null)
                     {
-                        if(line == lbLista.Items[i].ToString())
+                        for (int i = 0; i < lbLista.Items.Count; i++)
                         {
-                            lbLista.SelectedIndex = i;
+                            if (line == lbLista.Items[i].ToString())
+                            {
+                                lbLista.SelectedIndex = i;
+                            }
                         }
                     }
                 }
+                file.Close();
             }
-            file.Close();
+            catch
+            {
+                MessageBox.Show("You don't have any favorite records so I am giving you a clean Start :).");
+            }
         }
     }
 }
