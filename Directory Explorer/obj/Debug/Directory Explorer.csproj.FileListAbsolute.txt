@@ -7,3 +7,12 @@ D:\C#\Directory Explorer\Directory Explorer\obj\Debug\Directory_Explorer.Propert
 D:\C#\Directory Explorer\Directory Explorer\obj\Debug\Directory Explorer.csproj.GenerateResource.Cache
 D:\C#\Directory Explorer\Directory Explorer\obj\Debug\Directory Explorer.exe
 D:\C#\Directory Explorer\Directory Explorer\obj\Debug\Directory Explorer.pdb
+D:\C#\Directory-Explorer\Directory Explorer\bin\Debug\Directory Explorer.exe.config
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory Explorer.exe
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory Explorer.pdb
+D:\C#\Directory-Explorer\Directory Explorer\bin\Debug\Directory Explorer.exe
+D:\C#\Directory-Explorer\Directory Explorer\bin\Debug\Directory Explorer.pdb
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory Explorer.csprojResolveAssemblyReference.cache
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory_Explorer.FormExplorer.resources
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory_Explorer.Properties.Resources.resources
+D:\C#\Directory-Explorer\Directory Explorer\obj\Debug\Directory Explorer.csproj.GenerateResource.Cache

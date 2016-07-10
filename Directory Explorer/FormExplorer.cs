@@ -59,5 +59,18 @@ namespace Directory_Explorer
                 lbLista.ForeColor = Color.Red;
             }
         }
+
+        private void btFavorite_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\Public\WriteLines.txt";
+            StreamWriter sw = File.CreateText(path);
+            sw.WriteLine(tbPath.Text);
+            foreach(var i in lbLista.SelectedItems)
+            { 
+                sw.WriteLine(i.ToString());
+            }
+            sw.Close();
+
+        }
     }
 }
